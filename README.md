@@ -1,24 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project implementing the [OpenAI Agents JS Voice Quickstart](https://openai.github.io/openai-agents-js/guides/voice-agents/quickstart/).
 
-## Getting Started
+## Voice Agent Features
 
-First, run the development server:
+This project includes a real-time voice agent that allows you to have spoken conversations with an AI assistant powered by OpenAI's Realtime API.
+
+### Prerequisites
+
+- Node.js and pnpm installed
+- OpenAI API key ([Get one here](https://platform.openai.com/api-keys))
+
+### Setup
+
+1. Copy the example environment file and add your OpenAI API key:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.example .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Edit `.env.local` and replace `sk-your-api-key-here` with your actual OpenAI API key:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+OPENAI_API_KEY=sk-your-actual-key-here
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Getting Started
+
+Run the development server:
+
+```bash
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the voice agent interface.
+
+### How to Use
+
+1. Click "Connect to Voice Agent" button
+2. Grant microphone permissions when prompted
+3. Start speaking to the AI assistant
+4. The assistant will respond with voice in real-time
+
+### Project Structure
+
+- `app/page.tsx` - Main page with voice agent interface
+- `app/components/VoiceAgent.tsx` - Client-side voice agent component
+- `app/api/token/route.ts` - API route for generating ephemeral OpenAI tokens
 
 ## Learn More
 
